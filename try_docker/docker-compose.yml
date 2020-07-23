@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+    db:
+        image: mysql:5.7.20
+        hostname: db
+        volumes:
+          - "./volumes/mysql:/var/lib/mysql"
+        ports:
+          - "33061:3306"
+        env_file:
+          - "./.env"
+
+    nginx:
+        image: abhineet05/nginx-wordpress-test:assignment
+        hostname: nginx
+        ports:
+          - "801:80"
+        volumes:
+          - "./volumes/nginx/logs:/var/log/nginx/"
+          - "./wordpress:/var/www/try_docker"
+          - "./wp-config.php:/var/www/try_docker/wp-config.php"
+        depends_on:
+          - php
+        env_file:
+          - "./.env"
+
+    php:
+        image: abhineet05/php-wordpress-test:assignment
+        hostname: php
+        volumes:
+          - ./wordpress:/var/www/try_docker
+          - ./wp-config.php:/var/www/try_docker/wp-config.php
+        env_file:
+          - "./.env"
+        depends_on:
+          - db

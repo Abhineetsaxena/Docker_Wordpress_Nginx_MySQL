@@ -1,0 +1,1 @@
+2020/07/20 23:11:28 [error] 6#6: *3 open() "/usr/share/nginx/html/index.php" failed (2: No such file or directory), client: 172.19.0.1, server: localhost, request: "GET /index.php HTTP/1.1", host: "localhost:801"

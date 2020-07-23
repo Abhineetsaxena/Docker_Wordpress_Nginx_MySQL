@@ -1,0 +1,16 @@
+<span class="error"><b>ERROR:</b> CREATE_CLIENT:LEClient\Exceptions\LEConnectorException: Invalid response: 400 <b>(Parse error reading JWS. Please try after 2-3 hours.)</b> in /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/Exceptions/LEConnectorException.php:78
+Stack trace:
+#0 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/LEConnector.php(165): LEClient\Exceptions\LEConnectorException::InvalidResponseException(Array)
+#1 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/LEConnector.php(193): LEClient\LEConnector-&gt;request('POST', 'https://acme-v0...', '{"protected":"e...')
+#2 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/LEAccount.php(97): LEClient\LEConnector-&gt;post('https://acme-v0...', '{"protected":"e...')
+#3 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/LEAccount.php(75): LEClient\LEAccount-&gt;createLEAccount('abhineetsaxena0...')
+#4 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/lib/LEClient.php(140): LEClient\LEAccount-&gt;__construct(Object(LEClient\LEConnector), 1, 'abhineetsaxena0...', Array)
+#5 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/classes/le-core.php(147): LEClient\LEClient-&gt;__construct('abhineetsaxena0...', false, 1, '/var/www/try_do...')
+#6 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/classes/le-core.php(124): WPLE_Core-&gt;wple_create_client()
+#7 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/classes/le-core.php(101): WPLE_Core-&gt;wple_generate_verify_ssl(Array)
+#8 /var/www/try_docker/wp-content/plugins/wp-letsencrypt-ssl/admin/le_admin.php(440): WPLE_Core-&gt;__construct(Array)
+#9 /var/www/try_docker/wp-includes/class-wp-hook.php(287): WPLE_Admin-&gt;wple_save_email_generate_certs('')
+#10 /var/www/try_docker/wp-includes/class-wp-hook.php(311): WP_Hook-&gt;apply_filters(NULL, Array)
+#11 /var/www/try_docker/wp-includes/plugin.php(478): WP_Hook-&gt;do_action(Array)
+#12 /var/www/try_docker/wp-admin/admin.php(170): do_action('admin_init')
+#13 {main}</span>
